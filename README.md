@@ -40,15 +40,18 @@ var summonMiddleware = require('summon-middleware');
 var express = require('express');
 var app = express();
 var responsePoweredBy = require('response-powered-by');
-var POWERED_BY = "@NIckNaso";
+var POWERED_BY = "@NickNaso";
 // Some other configuration for the express app and session
 
 // predicate as function
 app.use(summonMiddleware(
   responsePoweredBy(POWERED_BY),
   function () {
-    // some other instructions ...
-    return true;
+    // some instructions...
+    if (<Your condition>) {
+      return true;
+    }
+    return false;
   }
 ));
 ```
