@@ -4,13 +4,12 @@
   "version": "1.0.0",
   "contributors": [
     {
-      
       "name": "Mauro Doganieri",
       "email": "mauro.doganieri@gmail.com"
     },
     {
-    "name": "Nicola Del Gobbo",
-    "email": "nicoladelgobbo@gmail.coom"
+      "name": "Nicola Del Gobbo",
+      "email": "nicoladelgobbo@gmail.coom"
     }
   ],
   "keywords": [
@@ -23,7 +22,7 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=test/jasmine.json"
+    "test": "node node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=test/jasmine.json"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -36,6 +35,10 @@
     "url": "https://github.com/mauro-d/summon-middleware/issues"
   },
   "devDependencies": {
+    "express": "^4.14.0",
+    "jasmine": "^2.4.1",
+    "response-powered-by": "^1.0.3",
+    "supertest": "^1.2.0"
   },
   "files": [
     "LICENSE",

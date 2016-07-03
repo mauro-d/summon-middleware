@@ -18,3 +18,60 @@
  ******************************************************************************/
 
 'use strict';
+
+/*!
+ * Module dependencies
+ */
+var express = require('express');
+var request = require('supertest');
+var responsePoweredBy = require('response-powered-by');
+var summonMiddleware = require('../');
+
+var POWERED_BY = "@NickNaso";
+var DEFAULT_POWERED_BY = "Express";
+
+describe("Test summon-middleware()", function () {
+
+    it('Should use the responsePoweredBy middleware -- predicate is true', function (done) {
+        var app = express()
+            .use(summonMiddleware(responsePoweredBy(POWERED_BY), function () {
+                return true;
+            }))
+            .get('/', function (req, res) {
+                res.send('Summon Middleware');
+            });
+        request(app)
+            .get('/')
+            .expect(200)
+            .end(function (err, res) {
+                if (err) {
+                    done(err);
+                } else {
+                    expect(res.get('X-Powered-By')).toEqual(POWERED_BY);
+                    done();
+                }
+            })
+    });
+
+    it('Should not use the responsePoweredBy middleware -- predicate is false', function (done) {
+        var app = express()
+            .use(summonMiddleware(responsePoweredBy(POWERED_BY), function () {
+                return false;
+            }))
+            .get('/', function (req, res) {
+                res.send('Summon Middleware');
+            });
+        request(app)
+            .get('/')
+            .expect(200)
+            .end(function (err, res) {
+                if (err) {
+                    done(err);
+                } else {
+                    expect(res.get('X-Powered-By')).toEqual(DEFAULT_POWERED_BY);
+                    done();
+                }
+            })
+    });
+    
+});
