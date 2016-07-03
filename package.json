@@ -1,0 +1,47 @@
+{
+  "name": "summon-middleware",
+  "description": "Dinamically enable or disable express middleware",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      
+      "name": "Mauro Doganieri",
+      "email": "mauro.doganieri@gmail.com"
+    },
+    {
+    "name": "Nicola Del Gobbo",
+    "email": "nicoladelgobbo@gmail.coom"
+    }
+  ],
+  "keywords": [
+    "dynamic",
+    "middleware",
+    "express",
+    "connect",
+    "runtime",
+    "conditional"
+  ],
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=test/jasmine.json"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mauro-d/summon-middleware"
+  },
+  "bugs": {
+    "url": "https://github.com/mauro-d/summon-middleware/issues"
+  },
+  "devDependencies": {
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "index.js",
+    "lib/"
+  ]
+}
