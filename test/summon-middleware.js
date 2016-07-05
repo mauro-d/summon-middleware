@@ -26,11 +26,25 @@ var express = require('express');
 var request = require('supertest');
 var responsePoweredBy = require('response-powered-by');
 var summonMiddleware = require('../');
+var SummonMiddlewareError = require('../lib/error/SummonMiddlewareError');
 
 var POWERED_BY = "@NickNaso";
 var DEFAULT_POWERED_BY = "Express";
 
 describe("Test summon-middleware()", function () {
+
+    it('Should thrown SummonMiddlewareError -- predicate parameter is not a function', function () {
+            
+        expect(function () { express().use(summonMiddleware(responsePoweredBy(POWERED_BY), 'predicate')); })
+        .toThrow(new SummonMiddlewareError('The predicate parameter must be a function that returns a boolean value.'));    
+    });
+
+    it('Should thrown SummonMiddlewareError -- middleware parameter is not a function', function () {
+            
+        expect(function () { express().use(summonMiddleware('myMiddleware', 'predicate')); })
+        .toThrow(new SummonMiddlewareError('The middleware parameter must be a function.' +
+            ' More info at: http://expressjs.com'));    
+    });
 
     it('Should use the responsePoweredBy middleware -- predicate is true', function (done) {
         var app = express()
@@ -50,7 +64,29 @@ describe("Test summon-middleware()", function () {
                     expect(res.get('X-Powered-By')).toEqual(POWERED_BY);
                     done();
                 }
-            })
+            });
+    });
+
+
+    it('Should use the responsePoweredBy middleware -- predicate is true', function (done) {
+        var app = express()
+            .use(summonMiddleware(responsePoweredBy(POWERED_BY), function () {
+                return true;
+            }))
+            .get('/', function (req, res) {
+                res.send('Summon Middleware');
+            });
+        request(app)
+            .get('/')
+            .expect(200)
+            .end(function (err, res) {
+                if (err) {
+                    done(err);
+                } else {
+                    expect(res.get('X-Powered-By')).toEqual(POWERED_BY);
+                    done();
+                }
+            });
     });
 
     it('Should not use the responsePoweredBy middleware -- predicate is false', function (done) {
@@ -71,7 +107,7 @@ describe("Test summon-middleware()", function () {
                     expect(res.get('X-Powered-By')).toEqual(DEFAULT_POWERED_BY);
                     done();
                 }
-            })
+            });
     });
     
 });

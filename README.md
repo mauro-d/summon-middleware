@@ -1,7 +1,7 @@
 # summon-middleware
 ### Dinamically enable or disable express middleware
 
-This wrapper allow you to dinamically enable or disable an express or connect middleware.
+This wrapper allows you to dinamically enable or disable an express or connect middleware.
 In some circumstances you would use a middleware only if some conditions are
 met.
 
