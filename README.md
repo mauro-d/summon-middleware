@@ -1,12 +1,14 @@
 # summon-middleware
 ### Dinamically enable or disable express middleware
 
-This wrapper allow you to dinamically enable or disable an express or connect middleware.
+This wrapper allows you to dinamically enable or disable an express or connect
+middleware or an array of them.
 In some circumstances you would use a middleware only if some conditions are
 met.
 
 #### Installation
-If you want use summon-middleware you have to install it. There are two methods to do that:
+If you want to use summon-middleware you have to install it.
+There are two methods to do that:
 
 In your package.json add the following item:
 ```json
@@ -55,8 +57,11 @@ app.use(summonMiddleware(
   }
 ));
 ```
-The first parameter for summon-middleware is an express or connect middleware, while the
-second is a function that return a boolean value. The predicate function represents the condition by the middleware has to be used or not.
+The first parameter for summon-middleware is an express or connect middleware
+or an array of them, while the second one is a function that returns a boolean
+value. The predicate function represents the condition for which the middleware
+or more of them have to be used or not.
 
-If the parameter's type do not match with those required an error will be thrown. In pariticular the error will be an
+If the parameters' type does not match with those required, an error will be
+thrown. In pariticular, the error will be an
 instance of **SummonMiddlewareError**.
