@@ -1,38 +1,46 @@
 # summon-middleware
-### Dinamically enable or disable express middleware
+
+## Dinamically enable or disable express middleware
 
 This wrapper allows you to dinamically enable or disable an express or connect
 middleware or an array of them.
-In some circumstances you would use a middleware only if some conditions are
-met.
+In some circumstances you would use one or more middlewares only if some
+conditions are met.
 
-#### Installation
+## Installation
+
 If you want to use summon-middleware you have to install it.
 There are two methods to do that:
 
 In your package.json add the following item:
+
 ```json
 "summon-middleware": "version"
 ```
+
 then digit:
+
 ```console
 npm install
 ```
-**Example**:
+
+### Example
+
 ```json
 "summon-middleware": "*" for the latest version
 "summon-middleware": "1.0.0" for the version 1.0.0
 ```
 
-**OR**
+or launch this command:
 
-launch this command:
 ```console
 npm install summon-middleware --save
 ```
-#### Use
+
+## Use
+
 ```javascript
-summonMiddleware(<Your Express or Connect Middleware>, <predicate>);
+summonMiddleware(<your express or connect middleware(s)>, <predicate>);
 ```
 
 ```javascript
@@ -50,17 +58,19 @@ app.use(summonMiddleware(
   responsePoweredBy(POWERED_BY),
   function () {
     // some instructions...
-    if (<Your condition>) {
+    if (<your condition>) {
       return true;
     }
     return false;
   }
 ));
 ```
+
 The first parameter for summon-middleware is an express or connect middleware
-or an array of them, while the second one is a function that returns a boolean
-value. The predicate function represents the condition for which the middleware
-or more of them have to be used or not.
+or an array of them.
+The second parameter is a predicate function that returns a boolean value
+and that represents the condition for which the provided middlewares
+have to be used or not.
 
 If the parameters' type does not match with those required, an error will be
 thrown. In pariticular, the error will be an
