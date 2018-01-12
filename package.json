@@ -1,6 +1,6 @@
 {
   "name": "summon-middleware",
-  "description": "Dinamically enable or disable express middleware",
+  "description": "Dynamically enable or disable express middlewares",
   "version": "1.0.1",
   "contributors": [
     {
