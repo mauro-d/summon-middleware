@@ -12,7 +12,9 @@ conditions are met.
 If you want to use summon-middleware you have to install it.
 There are two methods to do that:
 
-in your package.json add the following item for the latest version:
+### First method
+
+In your package.json add the following item for the latest version:
 
 ```json
 "summon-middleware": "*"
@@ -31,7 +33,9 @@ then digit:
 npm install
 ```
 
-Otherwise you can launch this command:
+### Second method
+
+Just launch this command:
 
 ```console
 npm install summon-middleware --save
