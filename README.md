@@ -47,8 +47,8 @@ npm install summon-middleware --save
 summonMiddleware(middleware, predicate)
 ```
 
-- `middleware` `<Function>` | `<Function[]>` an express or connect middleware or an array of them.
-- `predicate` `<Function>` a function that returns a boolean value
+- `middleware` {Function|Function[]} an express or connect middleware or an array of them.
+- `predicate` {Function} a function that returns a boolean value
 and that represents the condition for which the provided middlewares
 have to be used or not.
 - **returns**: a single middleware or an array of middlewares.
