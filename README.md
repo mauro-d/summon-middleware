@@ -27,7 +27,7 @@ specifying the version number:
 "summon-middleware": "1.0.0"
 ```
 
-then digit:
+then launch this command:
 
 ```console
 npm install
@@ -47,7 +47,8 @@ npm install summon-middleware --save
 summonMiddleware(middleware, predicate)
 ```
 
-- `middleware` {Function|Function[]} an express or connect middleware or an array of them.
+- `middleware` {Function|Function[]} an express or connect middleware or an
+array of them.
 - `predicate` {Function} a function that returns a boolean value
 and that represents the condition for which the provided middlewares
 have to be used or not.
