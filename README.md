@@ -9,6 +9,18 @@ middleware or an array of them.
 In some circumstances you would use one or more middlewares only if some
 conditions are met.
 
+
+<br/>
+
+<div align="center">
+    
+[![Build Status](https://travis-ci.org/mauro-d/summon-middleware.svg?branch=master)](https://travis-ci.org/mauro-d/summon-middleware)
+[![Build status](https://ci.appveyor.com/api/projects/status/0iouq0pjolq75ye4?svg=true)](https://ci.appveyor.com/project/NickNaso/summon-middleware)
+[![NPM version](https://img.shields.io/npm/v/summon-middleware.svg?style=flat)](https://www.npmjs.com/package/summon-middleware)
+[![NPM downloads](https://img.shields.io/npm/dm/summon-middleware.svg?style=flat)](https://www.npmjs.com/package/summon-middleware)
+
+</div>  
+
 ## Installation
 
 If you want to use summon-middleware you have to install it.
