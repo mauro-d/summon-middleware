@@ -36,14 +36,13 @@ describe("Test summon-middleware()", function () {
     it('Should thrown SummonMiddlewareError -- predicate parameter is not a function', function () {
             
         expect(function () { express().use(summonMiddleware(responsePoweredBy(POWERED_BY), 'predicate')); })
-        .toThrow(new SummonMiddlewareError('The predicate parameter must be a function that returns a boolean value.'));    
+        .toThrow(new SummonMiddlewareError('The predicate parameter must be a function.'));    
     });
 
     it('Should thrown SummonMiddlewareError -- middleware parameter is not a function', function () {
             
         expect(function () { express().use(summonMiddleware('myMiddleware', 'predicate')); })
-        .toThrow(new SummonMiddlewareError('The middleware parameter must be a function.' +
-            ' More info at: http://expressjs.com'));    
+        .toThrow(new SummonMiddlewareError('The predicate parameter must be a function.'));    
     });
 
     it('Should use the responsePoweredBy middleware -- predicate is true', function (done) {
