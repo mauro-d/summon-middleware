@@ -1,7 +1,7 @@
 {
   "name": "summon-middleware",
-  "description": "Dinamically enable or disable express middleware",
-  "version": "1.0.2",
+  "description": "Dynamically enable or disable express middlewares",
+  "version": "1.0.1",
   "contributors": [
     {
       "name": "Mauro Doganieri",
@@ -22,7 +22,9 @@
   ],
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=test/jasmine.json"
+    "test": "node node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=__test__/jasmine.json",
+    "test-travis": "node node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=__test__/jasmine.json",
+    "test-appveyor": "node ./node_modules/jasmine/bin/jasmine.js JASMINE_CONFIG_PATH=__test__/jasmine.json"
   },
   "engines": {
     "node": ">= 0.10.0"
@@ -35,10 +37,10 @@
     "url": "https://github.com/mauro-d/summon-middleware/issues"
   },
   "devDependencies": {
-    "express": "^4.14.0",
-    "jasmine": "^2.4.1",
-    "response-powered-by": "^1.0.3",
-    "supertest": "^1.2.0"
+    "express": "^4.16.2",
+    "jasmine": "^3.1.0",
+    "response-powered-by": "^1.0.4",
+    "supertest": "^3.0.0"
   },
   "files": [
     "LICENSE",
