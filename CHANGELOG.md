@@ -1,4 +1,14 @@
 
+2.0.0 / 2018-03-09
+==================
+
+  * Added capability to use an array of middlewares
+  * Updated documentation
+  * Initial support for CI
+  
+  For more info plaease refer to the following list of issues:
+  * [[Issues-5] Capability to use array of middlewares](https://github.com/mauro-d/summon-middleware/issues/5)
+
 1.0.2 / 2016-07-05
 ==================
 

@@ -25,7 +25,7 @@ or, if you want a specific version, just add an item like the following,
 specifying the version number:
 
 ```json
-"summon-middleware": "1.0.0"
+"summon-middleware": "2.0.0"
 ```
 
 then launch this command:
