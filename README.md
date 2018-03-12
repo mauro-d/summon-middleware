@@ -1,7 +1,5 @@
 # summon-middleware
 
-This wrapper allows you to dynamically enable or disable an express or connect middleware.
-
 ## Dynamically enable or disable express middlewares
 
 This wrapper allows you to dynamically enable or disable an express or connect
@@ -38,7 +36,7 @@ or, if you want a specific version, just add an item like the following,
 specifying the version number:
 
 ```json
-"summon-middleware": "2.0.0"
+"summon-middleware": "2.0.2"
 ```
 
 then launch this command:
